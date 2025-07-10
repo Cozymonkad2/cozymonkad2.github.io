@@ -5,19 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Free online image compressor tool. Reduce JPG, PNG, WebP file sizes without quality loss. Optimize images for web & mobile with our fast compression technology.">
-    <meta name="keywords" content="image compressor, photo compressor, reduce image size, optimize images, jpg compressor, png compressor, webp compressor, online image optimizer">
-    <meta name="author" content="ImageCompressorPro">
+    <meta name="keywords" content="image compressor, photo compressor, reduce image size, optimize images, jpg compressor, png compressor, webp compressor, online image optimizer, picture compressor, shrink image size, image size reducer, photo size reducer, compress photos online, free image optimizer, image quality optimizer, web image optimizer, mobile image optimizer, blog image compressor, ecommerce image optimizer, social media image compressor, facebook image optimizer, instagram photo compressor, website image optimizer, fast image compression, batch image compressor, high quality image compression, lossless compression, image resizer, photo resizer, image converter, jpg to webp, png to jpg, image format converter, photo quality optimizer, reduce photo size for web, compress images for website, free online photo editor, image optimization tool, photo compression software, best image compressor, professional image optimizer, bulk image compressor, ad image optimizer, email image compressor, seo image optimizer, faster website images, improve page speed with image compression, web performance optimizer">
+    <meta name="author" content="Ekamveer">
     <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="English">
+    <meta name="distribution" content="global">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook / Social Media Meta Tags -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imagecompressorpro.com/">
     <meta property="og:title" content="ImageCompressorPro | Free Online Image Compression Tool">
     <meta property="og:description" content="Compress and optimize your images for web and mobile. Reduce file size without losing quality. Supports JPG, PNG, and WebP formats.">
+    <meta property="og:image" content="https://imagecompressorpro.com/preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ImageCompressorPro">
     
-    <!-- Twitter -->
+    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://imagecompressorpro.com/">
     <meta name="twitter:title" content="ImageCompressorPro | Free Online Image Compression Tool">
     <meta name="twitter:description" content="Compress and optimize your images for web and mobile. Reduce file size without losing quality. Supports JPG, PNG, and WebP formats.">
+    <meta name="twitter:image" content="https://imagecompressorpro.com/preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://imagecompressorpro.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ImageCompressorPro",
+      "url": "https://imagecompressorpro.com/",
+      "description": "Free online tool to compress and optimize your images for web and mobile. Reduce file size without losing quality.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
     
     <title>ImageCompressorPro | Free Online Image Compression Tool</title>
     
@@ -35,7 +70,6 @@
             --gray: #6c757d;
             --light-gray: #e9ecef;
             --success: #4bb543;
-            --warning: #d9534f;
             --border-radius: 12px;
             --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             --transition: all 0.3s ease;
@@ -96,6 +130,15 @@
             justify-content: center;
             color: white;
             font-weight: bold;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark);
         }
 
         main {
@@ -222,13 +265,6 @@
             transition: var(--transition);
         }
 
-        .format-notice {
-            display: none;
-            color: var(--warning);
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
         .btn {
             display: inline-block;
             padding: 12px 24px;
@@ -323,10 +359,6 @@
             margin-bottom: 20px;
         }
 
-        .savings.warning {
-            color: var(--warning);
-        }
-
         .download-btn {
             width: 100%;
         }
@@ -358,26 +390,6 @@
             text-align: center;
         }
 
-        .legal-links {
-            margin-bottom: 15px;
-        }
-
-        .legal-links a {
-            color: var(--light-gray);
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .legal-links a:hover {
-            text-decoration: underline;
-        }
-
-        .copyright-notice {
-            margin-top: 15px;
-            font-size: 0.8em;
-            color: var(--light-gray);
-        }
-
         .heart {
             color: #ff6b6b;
         }
@@ -397,11 +409,6 @@
             }
             .compressor-container {
                 padding: 20px;
-            }
-            .legal-links {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
             }
         }
     </style>
@@ -445,9 +452,6 @@
                         <option value="png">PNG</option>
                         <option value="webp">WebP</option>
                     </select>
-                    <div id="format-notice" class="format-notice">
-                        Note: PNG is a lossless format. For better compression, try JPEG or WebP.
-                    </div>
                 </div>
             </div>
 
@@ -499,10 +503,8 @@
     </main>
 
     <footer>
-        <p class="copyright">Made with <span class="heart">❤️</span> by Ekamveer</p>
-        <div class="copyright-notice">
-            <p>© 2023 ImageCompressorPro - An unregistered free tool</p>
-            <p>All image processing occurs in your browser - no files are uploaded</p>
+        <div class="container">
+            <p class="copyright">Made with <span class="heart">❤️</span> by Ekamveer</p>
         </div>
     </footer>
 
@@ -511,29 +513,9 @@
             // Quality slider
             const qualitySlider = document.getElementById('quality');
             const qualityValue = document.getElementById('quality-value');
-            const formatSelect = document.getElementById('format');
-            const formatNotice = document.getElementById('format-notice');
             
             qualitySlider.addEventListener('input', function() {
                 qualityValue.textContent = this.value;
-            });
-
-            // Show/hide format notice
-            formatSelect.addEventListener('change', function() {
-                if (this.value === 'png') {
-                    formatNotice.style.display = 'block';
-                    qualitySlider.value = 70; // Default to 70 for PNG for better compression
-                    qualityValue.textContent = '70';
-                } else {
-                    formatNotice.style.display = 'none';
-                    if (this.value === 'jpeg') {
-                        qualitySlider.value = 80;
-                        qualityValue.textContent = '80';
-                    } else {
-                        qualitySlider.value = 85;
-                        qualityValue.textContent = '85';
-                    }
-                }
             });
 
             // File upload handling
@@ -553,14 +535,14 @@
             ['dragover', 'dragenter'].forEach(event => {
                 uploadArea.addEventListener(event, function(e) {
                     e.preventDefault();
-                    uploadArea.classList.add('upload-area-hover');
+                    this.classList.add('upload-area-hover');
                 });
             });
 
             ['dragleave', 'dragend', 'drop'].forEach(event => {
                 uploadArea.addEventListener(event, function(e) {
                     e.preventDefault();
-                    uploadArea.classList.remove('upload-area-hover');
+                    this.classList.remove('upload-area-hover');
                 });
             });
 
@@ -622,4 +604,108 @@
             });
 
             function resetTool() {
-                selected
+                selectedFile = null;
+                compressedBlob = null;
+                fileInput.value = '';
+                uploadArea.innerHTML = `
+                    <div class="upload-icon">📁</div>
+                    <h2 class="upload-text">Drag & Drop your image here</h2>
+                    <p class="upload-hint">or click to browse files (JPG, PNG, WebP supported)</p>
+                `;
+                compressBtn.disabled = true;
+                resetBtn.disabled = true;
+                document.getElementById('results').style.display = 'none';
+                document.getElementById('original-img').src = '';
+                document.getElementById('original-size').textContent = '0 KB';
+                document.getElementById('original-dimensions').textContent = '0 × 0';
+                qualitySlider.value = 80;
+                qualityValue.textContent = '80';
+            }
+
+            // Compress button
+            compressBtn.addEventListener('click', function() {
+                if (!selectedFile) return;
+                
+                compressImage(selectedFile);
+            });
+
+            function compressImage(file) {
+                const loading = document.getElementById('loading');
+                const results = document.getElementById('results');
+                const quality = parseInt(qualitySlider.value) / 100;
+                const format = document.getElementById('format').value;
+                
+                loading.style.display = 'block';
+                results.style.display = 'none';
+                
+                // Create an image element to work with
+                const img = new Image();
+                img.onload = function() {
+                    // Create canvas element
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Set canvas dimensions
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    
+                    // Draw image on canvas
+                    ctx.drawImage(img, 0, 0);
+                    
+                    // Convert to data URL with quality
+                    let mimeType = 'image/jpeg';
+                    if (format === 'png') mimeType = 'image/png';
+                    if (format === 'webp') mimeType = 'image/webp';
+                    
+                    canvas.toBlob(function(blob) {
+                        loading.style.display = 'none';
+                        results.style.display = 'block';
+                        
+                        compressedBlob = blob;
+                        const compressedUrl = URL.createObjectURL(blob);
+                        const compressedSize = blob.size;
+                        const originalSize = file.size;
+                        const savings = ((originalSize - compressedSize) / originalSize * 100).toFixed(2);
+                        
+                        // Display compressed image
+                        document.getElementById('compressed-img').src = compressedUrl;
+                        document.getElementById('compressed-size').textContent = `${(compressedSize / 1024).toFixed(2)} KB`;
+                        document.getElementById('compressed-dimensions').textContent = `${img.width} × ${img.height}`;
+                        document.getElementById('savings-display').textContent = `${savings}% smaller`;
+                        
+                        // Set up download button
+                        const downloadBtn = document.getElementById('download-btn');
+                        downloadBtn.onclick = function() {
+                            if (!compressedBlob) return;
+                            
+                            const a = document.createElement('a');
+                            const url = URL.createObjectURL(compressedBlob);
+                            
+                            // Determine file extension
+                            let extension = '.jpg';
+                            if (format === 'png') extension = '.png';
+                            if (format === 'webp') extension = '.webp';
+                            
+                            // Create filename (keep original name but change extension)
+                            const originalName = file.name.replace(/\.[^/.]+$/, "");
+                            a.download = `compressed_${originalName}${extension}`;
+                            a.href = url;
+                            
+                            document.body.appendChild(a);
+                            a.click();
+                            
+                            // Cleanup
+                            setTimeout(() => {
+                                document.body.removeChild(a);
+                                URL.revokeObjectURL(url);
+                            }, 100);
+                        };
+                    }, mimeType, quality);
+                };
+                
+                img.src = URL.createObjectURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
